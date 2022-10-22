@@ -1,0 +1,23 @@
+
+<!-- navigation bar - TODO fix mobile portrait bug -->
+<nav class="navbar navbar-expand-lg bg-dark toolbar">
+  <div class="container-fluid">
+    <!-- home button -->
+    <button id="home-button" class="navbar-brand text-white bg-dark" (click)="navigateMain()">
+      Movie Browser
+    </button>
+    <!-- favorites button -->
+    <ul class="navbar-nav me-1">
+      <li class="nav-item">
+        <a class="nav-link active text-white" routerLink="/favorites" aria-current="page" href="#">Favoris</a>
+      </li>
+    </ul>
+    <!-- search field & button -> TODO form group to submit on enter key pressed -->
+    <div class="d-flex" role="search">
+      <input #keywords class="form-control me-2" type="search" placeholder="nom du film" aria-label="Search">
+      <button class="btn btn-secondary" (click)="quickSearch(keywords.value)">Recherche</button>
+    </div>
+  </div>
+</nav>
+<router-outlet>
+</router-outlet>
